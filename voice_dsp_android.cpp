@@ -3,10 +3,9 @@
 #include <cstring>
 #include <algorithm>
 #include <atomic>
-extern "C" {
-  #include "lua.h"
-  #include "lauxlib.h"
-}
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
 struct VoiceDSPState {
   std::atomic<bool> enabled{true};
   std::atomic<bool> muted{false};
