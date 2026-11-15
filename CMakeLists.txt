@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(voicedsp)
-add_library(voicedsp SHARED voicedsp.cpp)
+add_library(voicedsp SHARED voice_dsp_android.cpp)
 target_compile_features(voicedsp PRIVATE cxx_std_17)
+find_package(Lua REQUIRED)
+target_include_directories(voicedsp PRIVATE ${LUA_INCLUDE_DIR})
+target_link_libraries(voicedsp PRIVATE ${LUA_LIBRARIES})
